@@ -25,19 +25,44 @@ document.querySelector('.large').addEventListener('mouseenter', () => {
 });
 
 // Scroll Animation
+let lastScrollTop = 0;
+const scrollThreshold = 50; // Minimum scroll distance to trigger animation
+
 function checkVisibility() {
     const elements = document.querySelectorAll('section, .skill-category, .timeline-item, .project-card, .education-item, .contact-info, .social-links');
+    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollDirection = currentScrollTop > lastScrollTop ? 'down' : 'up';
+    const viewportHeight = window.innerHeight;
     
     elements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
         const elementBottom = element.getBoundingClientRect().bottom;
-        const windowHeight = window.innerHeight;
         
         // If element is in viewport
-        if (elementTop < windowHeight * 0.8 && elementBottom > 0) {
+        if (elementTop < viewportHeight && elementBottom > 0) {
+            // Always show elements that are in viewport
             element.classList.add('visible');
+            element.classList.remove('hidden');
+        } else {
+            // Elements outside viewport
+            if (elementTop < 0) {
+                // Elements above viewport - always keep visible
+                element.classList.add('visible');
+                element.classList.remove('hidden');
+            } else {
+                // Elements below viewport
+                if (scrollDirection === 'up' && elementTop > viewportHeight * 0.2) {
+                    // Hide elements that are well below the viewport when scrolling up
+                    element.classList.add('hidden');
+                    element.classList.remove('visible');
+                } else {
+                    element.classList.remove('visible', 'hidden');
+                }
+            }
         }
     });
+    
+    lastScrollTop = currentScrollTop;
 }
 
 // Initial check
@@ -45,7 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
     checkVisibility();
 });
 
-// Check on scroll
+// Check on scroll with debounce
+let scrollTimeout;
 window.addEventListener('scroll', () => {
-    checkVisibility();
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        checkVisibility();
+    }, 50); // Debounce time in milliseconds
 });

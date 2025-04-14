@@ -109,6 +109,7 @@ section {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: transform, opacity;
 }
   
 section:hover {
@@ -118,6 +119,11 @@ section:hover {
 section.visible {
     opacity: 1;
     transform: translateY(0);
+}
+  
+section.hidden {
+    opacity: 0;
+    transform: translateY(20px);
 }
   
 h2 {
@@ -144,6 +150,7 @@ h2 {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: transform, opacity;
 }
   
 .skill-category:hover {
@@ -153,6 +160,11 @@ h2 {
 .skill-category.visible {
     opacity: 1;
     transform: translateY(0);
+}
+  
+.skill-category.hidden {
+    opacity: 0;
+    transform: translateY(20px);
 }
   
 .skill-category h3 {
@@ -220,6 +232,7 @@ h2 {
     opacity: 0;
     transform: translateX(-20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: transform, opacity;
 }
   
 .timeline-item::before {
@@ -258,6 +271,7 @@ h2 {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: transform, opacity;
 }
   
 .project-card:hover {
@@ -267,6 +281,11 @@ h2 {
 .project-card.visible {
     opacity: 1;
     transform: translateY(0);
+}
+  
+.project-card.hidden {
+    opacity: 0;
+    transform: translateY(20px);
 }
   
 .project-link {
@@ -291,6 +310,7 @@ h2 {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: transform, opacity;
 }
   
 .contact-info p {
@@ -302,12 +322,18 @@ h2 {
     transform: translateY(0);
 }
   
+.contact-info.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+  
 .social-links {
     display: flex;
     gap: 1rem;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: transform, opacity;
 }
   
 .social-link {
@@ -327,6 +353,11 @@ h2 {
 .social-links.visible {
     opacity: 1;
     transform: translateY(0);
+}
+  
+.social-links.hidden {
+    opacity: 0;
+    transform: translateY(20px);
 }
   
 /* Responsive Design */
@@ -561,9 +592,26 @@ section {
     transform: translateX(0);
 }
 
+.timeline-item.hidden {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
 .project-card.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.project-card.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.education-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: transform, opacity;
 }
 
 .education-item.visible {
@@ -571,7 +619,24 @@ section {
     transform: translateY(0);
 }
 
+.education-item.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.contact-info, .social-links {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: transform, opacity;
+}
+
 .contact-info.visible, .social-links.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.contact-info.hidden, .social-links.hidden {
+    opacity: 0;
+    transform: translateY(20px);
 }
