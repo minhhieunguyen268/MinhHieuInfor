@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Anime.js Animation Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <style>
+      .large {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        gap: 5px;
+        height: 100vh;
+      }
+
+      .large span {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="large">
+      <span>H</span>
+      <span>E</span>
+      <span>L</span>
+      <span>L</span>
+      <span>O</span>
+      <span>&nbsp;</span>
+      <span>W</span>
+      <span>O</span>
+      <span>R</span>
+      <span>L</span>
+      <span>D</span>
+    </h2>
+
+    <script>
+      anime({
+        targets: ".large span",
+        translateY: [
+          { value: "-2.75rem", duration: 600, easing: "easeOutExpo" },
+          { value: "0rem", duration: 800, easing: "easeOutBounce", delay: 100 },
+        ],
+        rotate: {
+          value: "-1turn",
+          easing: "easeInOutCirc",
+          duration: 1400,
+        },
+        delay: anime.stagger(50),
+        loop: true,
+        loopDelay: 1000,
+      });
+    </script>
+  </body>
+</html>
