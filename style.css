@@ -339,25 +339,23 @@ h2 {
 }
 
 @media (max-width: 480px) {
-    .timeline {
-        padding-left: 1.2rem;
+    body {
+        overflow-x: hidden;
+        width: 100%;
     }
 
-    .timeline-item {
-        padding-left: 1.2rem;
+    .content {
+        width: 100%;
+        padding: 0.5rem;
+        box-sizing: border-box;
     }
 
-    .timeline-item::before {
-        left: -0.3rem;
-        width: 0.6rem;
-        height: 0.6rem;
+    .header {
+        width: 100%;
+        padding: 0.5rem;
+        box-sizing: border-box;
     }
 
-    .timeline-item h3 {
-        font-size: 1.1rem;
-    }
-    
-    
     .large {
         width: 90%;
         font-size: 1.5rem;
@@ -365,10 +363,117 @@ h2 {
         justify-content: center;
         text-align: center;
         gap: 0.2rem;
+        margin: 0 auto;
     }
 
     .large span {
         font-size: 1.5rem;
+    }
+
+    .title {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    section {
+        width: 100%;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        box-sizing: border-box;
+    }
+
+    .skills-grid {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .skill-category {
+        width: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    .skill-description {
+        word-wrap: break-word;
+    }
+
+    .timeline {
+        width: 100%;
+        padding-left: 1.2rem;
+        box-sizing: border-box;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 1.2rem;
+        box-sizing: border-box;
+    }
+
+    .timeline-item h3 {
+        word-wrap: break-word;
+    }
+
+    .project-details li {
+        word-wrap: break-word;
+    }
+
+    .tech-stack {
+        width: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    .tech-stack li {
+        word-wrap: break-word;
+    }
+
+    .education-details li {
+        word-wrap: break-word;
+    }
+
+    .projects-grid {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .project-card {
+        width: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    .project-card p {
+        word-wrap: break-word;
+    }
+
+    .contact-info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-info p {
+        word-wrap: break-word;
+    }
+
+    .social-links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .social-link {
+        width: 90%;
+        text-align: center;
+        padding: 0.8rem;
+        box-sizing: border-box;
     }
 }
   
