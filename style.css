@@ -23,6 +23,13 @@ body {
     animation: fadeOutBackground 10s forwards; /* Giảm thời gian fade-out xuống 3 giây */
 }
   
+/* Mobile Background */
+@media (max-width: 768px) {
+    .loading-screen {
+        background-image: url('image/irondt.jpg');
+    }
+}
+  
 /* Biểu tượng xoay */
 .loader {
     width: 60px;
