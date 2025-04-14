@@ -106,10 +106,18 @@ section {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
   
 section:hover {
     transform: translateY(-5px);
+}
+  
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
   
 h2 {
@@ -133,10 +141,18 @@ h2 {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
   
 .skill-category:hover {
     transform: translateY(-5px);
+}
+  
+.skill-category.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
   
 .skill-category h3 {
@@ -201,6 +217,9 @@ h2 {
     position: relative;
     margin-bottom: 2rem;
     padding-left: 2rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
   
 .timeline-item::before {
@@ -236,10 +255,18 @@ h2 {
     padding: 1.5rem;
     border-radius: 8px;
     transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
   
 .project-card:hover {
     transform: translateY(-5px);
+}
+  
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
   
 .project-link {
@@ -261,15 +288,26 @@ h2 {
 /* Contact Section */
 .contact-info {
     margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
   
 .contact-info p {
     margin-bottom: 0.5rem;
 }
   
+.contact-info.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+  
 .social-links {
     display: flex;
     gap: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
   
 .social-link {
@@ -284,6 +322,11 @@ h2 {
 .social-link:hover {
     background: #B83435;
     color: white;
+}
+  
+.social-links.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
   
 /* Responsive Design */
@@ -510,4 +553,25 @@ section {
 .large:hover span {
     display: inline-block;
     animation: bounce 1.4s ease-out;
+}
+
+/* Scroll Animation Styles */
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.education-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-info.visible, .social-links.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
