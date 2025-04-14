@@ -177,7 +177,7 @@ h2 {
 /* Timeline Styles */
 .timeline {
     position: relative;
-    padding: 2rem 0;
+    padding-left: 2rem;
 }
   
 .timeline::before {
@@ -185,94 +185,36 @@ h2 {
     position: absolute;
     left: 0;
     top: 0;
+    bottom: 0;
     width: 2px;
-    height: 100%;
     background: #B83435;
 }
   
 .timeline-item {
     position: relative;
-    padding-left: 2rem;
     margin-bottom: 2rem;
+    padding-left: 2rem;
 }
   
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -6px;
+    left: -0.5rem;
     top: 0;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
     background: #B83435;
+    border-radius: 50%;
 }
   
 .timeline-item h3 {
-    color: #B83435;
-    margin-bottom: 0.5rem;
-    font-size: 1.4rem;
-}
-  
-.company {
-    color: #ffffff;
-    font-weight: bold;
+    color: #fff;
     margin-bottom: 0.5rem;
 }
   
-.date {
+.company, .date {
     color: #B83435;
     font-style: italic;
-    margin-bottom: 1rem;
-}
-  
-.project-description {
-    color: #ffffff;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-  
-.tech-stack {
-    background: rgba(184, 52, 53, 0.1);
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 1rem;
-}
-  
-.tech-stack h4 {
-    color: #B83435;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-  
-.tech-stack ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-  
-.tech-stack li {
-    margin-bottom: 0.5rem;
-    color: #ffffff;
-}
-  
-.project-details {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-}
-  
-.project-details li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #ffffff;
-}
-  
-.project-details li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #B83435;
 }
   
 /* Projects Grid */
@@ -359,24 +301,47 @@ h2 {
     .skill-category li {
         padding: 0.8rem;
     }
-    
-    .timeline::before {
-        left: 50%;
-        transform: translateX(-50%);
+
+    .timeline {
+        padding-left: 1.5rem;
     }
 
     .timeline-item {
-        padding-left: 0;
-        padding-top: 2rem;
+        padding-left: 1.5rem;
     }
 
     .timeline-item::before {
-        left: 50%;
-        transform: translateX(-50%);
+        left: -0.4rem;
+        width: 0.8rem;
+        height: 0.8rem;
     }
 
-    .tech-stack {
-        padding: 0.8rem;
+    .timeline-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .company, .date {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline {
+        padding-left: 1.2rem;
+    }
+
+    .timeline-item {
+        padding-left: 1.2rem;
+    }
+
+    .timeline-item::before {
+        left: -0.3rem;
+        width: 0.6rem;
+        height: 0.6rem;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.1rem;
     }
 }
   
@@ -413,42 +378,4 @@ section {
 .large:hover span {
     display: inline-block;
     animation: bounce 1.4s ease-out;
-}
-
-/* Education Section Styles */
-.education-item {
-    margin-bottom: 2rem;
-}
-
-.education-item h3 {
-    color: #B83435;
-    margin-bottom: 0.5rem;
-    font-size: 1.4rem;
-}
-
-.institution {
-    color: #ffffff;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.education-details {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.education-details li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #ffffff;
-    line-height: 1.6;
-}
-
-.education-details li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #B83435;
 }
