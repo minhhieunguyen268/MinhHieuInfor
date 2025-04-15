@@ -642,3 +642,35 @@ section {
     opacity: 0;
     transform: translateY(20px);
 }
+
+.about-me {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-me p {
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive adjustments for about-me section */
+@media (max-width: 768px) {
+    .about-me {
+        font-size: 1.1rem;
+        padding: 1.5rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-me {
+        font-size: 1rem;
+        padding: 1rem;
+        line-height: 1.6;
+    }
+}
